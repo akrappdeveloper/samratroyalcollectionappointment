@@ -10,24 +10,26 @@
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f8f8f8;
+            background: linear-gradient(135deg, #f8f8f8 60%, #f3e9e1 100%);
             color: #222;
         }
         header {
-            background: #2d2d2d;
+            background: linear-gradient(90deg, #a67c52 0%, #2d2d2d 100%);
             color: #fff;
-            padding: 2rem 0 1rem 0;
+            padding: 2.5rem 0 1.5rem 0;
             text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             letter-spacing: 2px;
+            font-weight: 700;
         }
         header p {
-            margin: 0.5rem 0 0 0;
-            font-size: 1.2rem;
-            color: #e0e0e0;
+            margin: 0.7rem 0 0 0;
+            font-size: 1.25rem;
+            color: #f3e9e1;
         }
         .container {
             max-width: 500px;
@@ -85,6 +87,195 @@
                 font-size: 2rem;
             }
         }
+        .brand-section {
+            max-width: 1100px;
+            margin: 2rem auto 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+        .brand-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .products-grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .product-card {
+            background: #faf7f2;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+            padding: 1rem;
+            width: 250px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        .product-card h3 {
+            margin: 0.5rem 0 0.3rem 0;
+            color: #a67c52;
+        }
+        .product-card p {
+            color: #555;
+            font-size: 0.98rem;
+        }
+        .brand-highlights {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .brand-highlights h4 {
+            color: #2d2d2d;
+            margin-bottom: 0.5rem;
+        }
+        .brand-highlights ul {
+            list-style: none;
+            padding: 0;
+            color: #444;
+            font-size: 1rem;
+        }
+        .brand-highlights li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2em;
+            position: relative;
+        }
+        .brand-highlights li:before {
+            content: '\2022';
+            color: #a67c52;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        @media (max-width: 900px) {
+            .products-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-card {
+                width: 90%;
+                margin-bottom: 1rem;
+            }
+        }
+        .product-card .price {
+            display: block;
+            margin-top: 0.5rem;
+            color: #2d2d2d;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .cart-btn {
+            display: block;
+            margin: 2rem auto 0 auto;
+            background: #a67c52;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(166,124,82,0.08);
+            transition: background 0.2s;
+        }
+        .cart-btn:hover {
+            background: #8c6239;
+        }
+        .cart-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .cart-modal.active {
+            display: flex;
+        }
+        .cart-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            min-width: 320px;
+            max-width: 90vw;
+            box-shadow: 0 4px 32px rgba(166,124,82,0.18);
+            position: relative;
+            animation: fadeInUp 0.5s;
+        }
+        .cart-content h3 {
+            margin-top: 0;
+            color: #a67c52;
+        }
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: #a67c52;
+            cursor: pointer;
+        }
+        .checkout-btn {
+            background: linear-gradient(90deg, #a67c52 60%, #8c6239 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+        .checkout-btn:hover {
+            background: linear-gradient(90deg, #8c6239 60%, #a67c52 100%);
+        }
+        #cart-items {
+            margin: 1rem 0;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-right: 1rem;
+        }
+        .cart-item-details {
+            flex: 1;
+        }
+        .cart-item-title {
+            font-weight: 600;
+            color: #2d2d2d;
+        }
+        .cart-item-price {
+            color: #a67c52;
+            font-size: 1rem;
+        }
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #c0392b;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script>
@@ -104,6 +295,56 @@
                     document.getElementById('form-status').className = 'error';
                 });
         }
+        // Simple Cart System
+        let cart = [];
+        function addToCart(event, name, price, img) {
+            event.stopPropagation();
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ name, price, img, qty: 1 });
+            }
+            updateCartCount();
+        }
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+        }
+        function openCart() {
+            document.getElementById('cart-modal').classList.add('active');
+            renderCart();
+        }
+        function closeCart() {
+            document.getElementById('cart-modal').classList.remove('active');
+        }
+        function renderCart() {
+            const itemsDiv = document.getElementById('cart-items');
+            itemsDiv.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, idx) => {
+                total += item.price * item.qty;
+                itemsDiv.innerHTML += `
+                    <div class='cart-item'>
+                        <img src='${item.img}' alt='${item.name}'>
+                        <div class='cart-item-details'>
+                            <div class='cart-item-title'>${item.name}</div>
+                            <div class='cart-item-price'>₹${item.price} x ${item.qty}</div>
+                        </div>
+                        <button class='cart-item-remove' onclick='removeFromCart(${idx})' title='Remove'>&times;</button>
+                    </div>
+                `;
+            });
+            document.getElementById('cart-total').textContent = total ? `Total: ₹${total}` : '';
+            if (!cart.length) itemsDiv.innerHTML = '<div style="text-align:center;color:#888;">Your cart is empty.</div>';
+        }
+        function removeFromCart(idx) {
+            cart.splice(idx, 1);
+            updateCartCount();
+            renderCart();
+        }
+        function checkoutCart() {
+            alert('Checkout functionality coming soon!');
+        }
     </script>
 </head>
 <body>
@@ -111,6 +352,55 @@
         <h1>Samrat Royal Collection</h1>
         <p>Book your exclusive appointment today</p>
     </header>
+    <section class="brand-section">
+        <div class="brand-intro">
+            <h2>Welcome to Samrat Royal Collection</h2>
+            <p>Discover our exclusive range of traditional and modern attire, custom gifts, and accessories. We offer premium Maharana Pratap printed polo t-shirts, magic mugs, and more, inspired by Rajputana heritage and modern trends. Enjoy quick payment, paid shipping, 24/7 support, and gift coupons. Trusted by thousands of happy customers!</p>
+        </div>
+        <div class="products-grid" id="products-grid">
+            <div class="product-card" data-name="Premium Maharana Pratap Polo T-Shirt" data-price="499" data-img="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Premium Maharana Pratap Polo T-Shirt">
+                <h3>Premium Maharana Pratap Polo T-Shirt</h3>
+                <p>White Cotton Half Sleeve | Rajputana Heritage Design</p>
+                <span class="price">₹499</span>
+                <button class="buy-btn" onclick="addToCart(event, 'Premium Maharana Pratap Polo T-shirt', 499, 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80')">Add to Cart</button>
+            </div>
+            <div class="product-card" data-name="Classic Car Full Sleeve Sky Blue T-shirt" data-price="399" data-img="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80" alt="Classic Car Full Sleeve Sky Blue T-shirt">
+                <h3>Classic Car Full Sleeve Sky Blue T-shirt</h3>
+                <p>Trendy, comfortable, and perfect for casual wear.</p>
+                <span class="price">₹399</span>
+                <button class="buy-btn" onclick="addToCart(event, 'Classic Car Full Sleeve Sky Blue T-shirt', 399, 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80')">Add to Cart</button>
+            </div>
+            <div class="product-card" data-name="Magic Mug" data-price="299" data-img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80">
+                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" alt="Magic Mug">
+                <h3>Magic Mug</h3>
+                <p>Heat-sensitive mug reveals a hidden design. Perfect gift!</p>
+                <span class="price">₹299</span>
+                <button class="buy-btn" onclick="addToCart(event, 'Magic Mug', 299, 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="brand-highlights">
+            <h4>Why Choose Us?</h4>
+            <ul>
+                <li>Exclusive designer collections</li>
+                <li>Personalized fitting and styling</li>
+                <li>Premium fabrics and craftsmanship</li>
+                <li>Trusted by thousands of happy customers</li>
+                <li>Quick payment, paid shipping, 24/7 support, and gift coupons</li>
+            </ul>
+        </div>
+        <button class="cart-btn" onclick="openCart()">🛒 View Cart (<span id="cart-count">0</span>)</button>
+    </section>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h3>Your Cart</h3>
+            <div id="cart-items"></div>
+            <div id="cart-total"></div>
+            <button class="checkout-btn" onclick="checkoutCart()">Checkout</button>
+        </div>
+    </div>
     <div class="container">
         <h2>Book an Appointment</h2>
         <form onsubmit="sendEmail(event)">
